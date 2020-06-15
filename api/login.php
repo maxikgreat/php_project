@@ -18,8 +18,8 @@
     $row = mysqli_fetch_assoc($result);
     if($row['COUNT(*)'] == 1)
     {
-    $logged = true;
-    $_SESSION['logged'] = true;
+      $logged = true;
+      $_SESSION['logged'] = true;
     }
   }
   
