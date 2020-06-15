@@ -1,4 +1,5 @@
 window.onload = () => {
+  checkAdmin();
   let action = document.querySelector('.loginHandler');
 
   let login = document.getElementById('login');
@@ -82,3 +83,27 @@ const auth = (errorText) => {
       console.log(e);
     })
 };
+
+const checkAdmin = () => {
+  console.log('fsaldkfj')
+  fetch('./api/ifadmin.php', {method: 'GET'})
+    .then(response => {
+      if (response.ok) {
+        response.json()
+          .then(data => {
+            if (data === 'Success!') {
+              const splitedUrl = document.location.href.split('/');
+              const lastParam = splitedUrl[splitedUrl.length - 1].split('.');
+              lastParam[0] = 'admin';
+              const joindedParam = lastParam.join('.');
+              splitedUrl[splitedUrl.length - 1] = joindedParam;
+              const joinedUrl = splitedUrl.join('/');
+              document.location.href = joinedUrl;
+            }
+          })
+      }
+    })
+    .catch(e => {
+      console.log(e);
+    })
+}

@@ -1,0 +1,15 @@
+main {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 60%;
+  max-width: 700px;
+  padding: 30px;
+  background-color: #a1a1fb;
+  border-radius: 10px;
+}
