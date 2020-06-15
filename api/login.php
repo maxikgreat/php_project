@@ -21,6 +21,9 @@
       $logged = true;
       $_SESSION['logged'] = true;
     }
+  } else {
+    $logged = false;
+    $_SESSION['logged'] = false;
   }
   
   echo json_encode($logged);
