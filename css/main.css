@@ -19,3 +19,26 @@ main {
   background-color: #a1a1fb;
   border-radius: 10px;
 }
+
+.invalid-input {
+  border: 3px solid red;
+}
+
+.invalid-prepend {
+  background-color: red;
+}
+
+.invalid-prepend > span {
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+}
+
+.error-text {
+  color: red;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
