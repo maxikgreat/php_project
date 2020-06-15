@@ -85,7 +85,6 @@ const auth = (errorText) => {
 };
 
 const checkAdmin = () => {
-  console.log('fsaldkfj')
   fetch('./api/ifadmin.php', {method: 'GET'})
     .then(response => {
       if (response.ok) {
