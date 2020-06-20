@@ -1,0 +1,17 @@
+main {
+  width: 100vw;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quizes-container {
+  width: 100%;
+  padding: 10px;
+  background-color: #c5c5fb;
+}
+
+.card {
+  margin-bottom: 5px;
+}

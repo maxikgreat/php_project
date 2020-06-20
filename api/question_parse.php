@@ -1,7 +1,9 @@
 <?php
 require_once './connect.php';
 
-$sql = "SELECT * FROM `questions`";
+$_POST = json_decode(file_get_contents("php://input"), true);
+
+$sql = "SELECT * FROM `questions` where quiz_id = " . "{$_POST['id']}";
 $array = array();
 $result = mysqli_query($conn, $sql);
 

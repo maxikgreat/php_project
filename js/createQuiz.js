@@ -68,6 +68,7 @@ window.onload = () => {
           questions: questionBlocks,
         }
       })
+        .catch(e => console.log(e));
     }
   });
 };
