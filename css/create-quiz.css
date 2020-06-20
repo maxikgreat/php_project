@@ -1,0 +1,13 @@
+main {
+  width: 100vww;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container {
+  width: 60%;
+  padding: 10px;
+  background-color: #c5c5fb;
+}
