@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/create-quiz.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="navbar-brand" href="./">
+        <img src="./images/quiz_logo.png" width="50" height="50" class="brand-image" alt="Quiz logo" loading="lazy">
+        <span class="brand-text">Admin</span>
+      </a>
+      <div class="opts-container">
+        <a href='#' type="button" class="btn btn-primary mr-3">Create quiz</button>
+        <a href="./" type="button" class="btn btn-danger logoutHandler">Logout</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="container">
+      <h2>Main info</h2>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Quiz Title</span>
+        </div>
+        <input type="text" class="form-control quiz-validate" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Description</span>
+        </div>
+        <input type="text" class="form-control quiz-validate" aria-describedby="basic-addon1">
+      </div>
+      <h2>Questions</h2>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Question #</span>
+        </div>
+        <input type="text" name="question" class="form-control question-validate" aria-describedby="basic-addon1">
+      </div>
+      <div class="row">
+        <div class="input-group col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#1</span>
+          </div>
+          <input type="text" name="answer1" class="form-control question-validate" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#2</span>
+          </div>
+          <input type="text" name="answer2" class="form-control question-validate" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#3</span>
+          </div>
+          <input type="text" name="answer3" class="form-control question-validate" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group col-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#4</span>
+          </div>
+          <input type="text" name="answer4" class="form-control question-validate" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Right answer</label>
+        </div>
+        <select class="custom-select" id="rightAnswer">
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <button class="btn btn-primary questionHandler">Add questions</button>
+      <button class="btn btn-success quizHandler">Add quiz</button>
+      <span class="error-text hidden ml-2"></span>
+    </section>
+  </main>
+  <script src="./js/admin.js"></script>
+  <script src='./js/createQuiz.js'></script>
+</body>
+</html>
