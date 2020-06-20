@@ -60,7 +60,14 @@ window.onload = () => {
     if (questionBlocks.length !== 0 && !allFill) {
       error.classList.add('hidden');
       error.innerHTML = '';
-      console.log("OK")
+      fetch('./api/add_quiz.php', {
+        method: 'POST',
+        body: {
+          quizTitle: mainInfoInputs[0].value,
+          quizDesc: mainInfoInputs[1].value,
+          questions: questionBlocks,
+        }
+      })
     }
   });
 };
