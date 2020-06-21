@@ -11,7 +11,7 @@ window.onload = () => {
                   <div class="card-body">
                     <h5 class="card-title">${quiz.name} (${quiz.question_amount} quest.)</h5>
                     <p class="card-text">${quiz.description}</p>
-                    <a href="./quiz.html?id=${quiz.id}" class="btn btn-primary">Start</a>
+                    <a href="./quiz.html?id=${quiz.id}&name=${quiz.name}" class="btn btn-primary">Start</a>
                   </div>
                 </div>
               `

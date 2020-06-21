@@ -1,0 +1,31 @@
+main {
+  margin-top: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quiz-container {
+  width: 80%;
+  padding: 10px;
+  background-color: #a1a1fb;
+}
+
+.footer-quiz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choosen {
+  background-color: green !important;
+  color: white;
+}
+.choosen:focus {
+  color: white;
+}
+
+.quiz-results {
+  margin-left: 20px;
+}
