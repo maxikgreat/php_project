@@ -41,27 +41,28 @@ else
 // $an_2 = $_POST['answer2'];
 // $an_3 = $_POST['answer3'];
 // $an_4 = $_POST['answer4'];
+for ($i = 0; $i > sizeof($_POST['questions']); $i++){
+    $id = i;
+    $question = $i->question;
+    $answer_1 = $i->answer1;
+    $answer_2 = $i->answer2;
+    $answer_3 = $i->answer3;
+    $answer_4 = $i->answer4;
+    $rightanswer = $i->rightAnswer;
+    $qui_id = 2;
+    $sql = "INSERT INTO questions (id, question, quiz_id, correct_answer_id, answer_1, answer_2, answer_3, answer_4) VALUES ($id, '$question', '$qui_id', '$rightanswer', '$answer_1', '$answer_2', '$answer_3', '$answer_4');";
+    if($result = mysqli_query($conn, $sql))
+    {
+        //echo "Success!";
+    }
+    else
+    {
+       //echo "Fatal error!";
+    }
+}
 
-$que = $_POST['questions[question[1]]'];
-$qui_id = 2;
-$rig_answer = 2;
-$an_1 = "dsds";
-$an_2 = "dsds";
-$an_3 = "dsds";
-$an_4 = "dsds";
-
-$sql = "INSERT INTO questions (id, question, quiz_id, correct_answer_id, answer_1, answer_2, answer_3, answer_4) VALUES (NULL, '$que', '$qui_id', '$rig_answer', '$an_1', '$an_2', '$an_3', '$an_4');";
 
 
-
- if($result = mysqli_query($conn, $sql))
- {
-     //echo "Success!";
- }
- else
- {
-    //echo "Fatal error!";
- }
 
 // // //Take questions amount
 // $sql = "SELECT COUNT(*) FROM questions WHERE id = '$quiz_id'";
