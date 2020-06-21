@@ -5,7 +5,7 @@ $id = $_POST['id'];
 
 
 
-$sql = "DELETE FROM `questions` WHERE `questions`.`quiz_id` = '$id'";
+$sql = "DELETE FROM questions WHERE quiz_id = '$id'";
 
 if($result = mysqli_query($conn, $sql))
 {
