@@ -61,13 +61,14 @@ window.onload = () => {
     if (questionBlocks.length !== 0 && !allFill) {
       error.classList.add('hidden');
       error.innerHTML = '';
-      fetch('./api/add_quiz.php', {
+      fetch('./api/qincrement.php', {
         method: 'POST',
-        body: {
+        body:JSON.stringify({
           quizTitle: mainInfoInputs[0].value,
           quizDesc: mainInfoInputs[1].value,
+          quizDate: Date.now(),
           questions: questionBlocks,
-        }
+        })
       })
         .then(() => {
           document.location.href = document.location.href.replace('create-quiz', 'admin');
