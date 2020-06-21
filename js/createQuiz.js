@@ -58,7 +58,7 @@ window.onload = () => {
       error.innerHTML = 'Fill main info quiz';
       error.classList.remove('hidden');
     }
-    if (questionBlocks.length !== 0 && !allFill) {
+    if (questionBlocks.length > 2 && !allFill) {
       error.classList.add('hidden');
       error.innerHTML = '';
       fetch('./api/qincrement.php', {
