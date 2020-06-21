@@ -1,35 +1,8 @@
 <?php
-
-
-//Take uploaded quiz id
-// $sql = "SELECT id FROM quiz ORDER BY id DESC LIMIT 1";
-// $result = mysqli_query($conn, $sql);
-// $row = mysqli_fetch_assoc($result);
-// $quiz_id = $row[id];
-
-
-
-
-
-
-
-
-// // // //Upload questions_amount info into Quiz table
-// //  $sql = "UPDATE quiz SET question_amount = '$questions_amount' WHERE id = '$quiz_id';"
-
-// // if($result = mysqli_query($conn, $sql))
-// // {
-// //     //echo "Success!";
-// // }
-// // else
-// // {
-// //     //echo "Fatal error!";
-// // }
-
   require_once './connect.php';
 
   $_POST = json_decode(file_get_contents("php://input"), true);
-
+//Insert quiz
   $quiz = $_POST['quizTitle']; 
   $desc = $_POST['quizDesc'];
   $date = $_POST['quizDate'];
@@ -51,7 +24,7 @@ $sql = "SELECT id FROM quiz ORDER BY id DESC LIMIT 1";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $quiz_id = $row[id];
-
+//Insert questions
   $questions = $_POST['questions'];
   foreach ($questions as $item) {
     $question = $item['question'];

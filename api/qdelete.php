@@ -1,9 +1,9 @@
 <?php
 require_once './connect.php';
-//$_POST = json_decode(file_get_contents("php://input"), true);
-//$id = $_POST['id'];
+$_POST = json_decode(file_get_contents("php://input"), true);
+$id = $_POST['id'];
 
-$id = 3;
+
 
 $sql = "DELETE FROM `questions` WHERE `questions`.`quiz_id` = '$id'";
 
