@@ -21,7 +21,44 @@
     </nav>
   </header>
   <main>
-    Hello
+    <h2></h2>
+    <section class="quiz-container">
+      <div class="quiz">
+        <h3 class="mb-3"></h3>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" >1.</span>
+          </div>
+          <input type="text" class="form-control" data-answer="1" readonly value="">
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" >2.</span>
+          </div>
+          <input type="text" class="form-control" data-answer="2" readonly value="">
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" >3.</span>
+          </div>
+          <input type="text" class="form-control" data-answer="3" readonly value="">
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text mb-3" >4.</span>
+          </div>
+          <input type="text" class="form-control" data-answer="4" readonly value="">
+        </div>
+        <div class="footer-quiz">
+          <span class="quiz-question-number"></span>
+          <span class="error-text"></span>
+          <div>
+            <button class="btn btn-primary mr-1 nextHandler">Next</button>
+            <button class="btn btn-success finishHandler">Finish</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="js/quiz.js"></script>
 </body>

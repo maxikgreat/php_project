@@ -1,4 +1,5 @@
 window.onload = () => {
+  checkAdmin();
   const questionBlocks = [];
   let questionHandler = document.querySelector('.questionHandler');
   let quizHandler = document.querySelector('.quizHandler');
@@ -49,8 +50,8 @@ window.onload = () => {
         break;
       }
     }
-    if (questionBlocks.length === 0) {
-      error.innerHTML = 'Quiz must contain at least 1 question';
+    if (questionBlocks.length < 2) {
+      error.innerHTML = 'Quiz must contain at least 3 questions';
       error.classList.remove('hidden');
     }
     if (allFill) {
@@ -68,6 +69,9 @@ window.onload = () => {
           questions: questionBlocks,
         }
       })
+        .then(() => {
+          document.location.href = document.location.href.replace('create-quiz', 'admin');
+        })
         .catch(e => console.log(e));
     }
   });
@@ -83,3 +87,22 @@ const checkQuestionValid = (errors) => {
     }
   };
 };
+
+const checkAdmin = () => {
+  fetch('./api/ifadmin.php', {method: 'GET'})
+    .then(response => {
+      if (!response.ok) {
+        document.write('You need firstly log in to see this page');
+        const splitedUrl = document.location.href.split('/');
+        const lastParam = splitedUrl[splitedUrl.length - 1].split('.');
+        lastParam[0] = 'login';
+        const joindedParam = lastParam.join('.');
+        splitedUrl[splitedUrl.length - 1] = joindedParam;
+        const joinedUrl = splitedUrl.join('/');
+        document.location.href = joinedUrl;
+      }
+    })
+    .catch(e => {
+      console.log(e);
+    })
+}
