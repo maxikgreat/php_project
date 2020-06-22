@@ -11,7 +11,12 @@ window.onload = () => {
                   <div class="card-body">
                     <h5 class="card-title">${quiz.name} (${quiz.question_amount} quest.)</h5>
                     <p class="card-text">${quiz.description}</p>
-                    <a href="./quiz.html?id=${quiz.id}&name=${quiz.name}" class="btn btn-primary">Start</a>
+                    <div>
+                      <a href="./quiz.html?id=${quiz.id}&name=${quiz.name}" class="btn btn-primary mr-3">Start</a>
+                      <span>Created: ${new Date(parseInt(quiz.date)).toLocaleDateString()} | 
+                        ${new Date(parseInt(quiz.date)).toLocaleTimeString()}
+                      </span>
+                    </div>
                   </div>
                 </div>
               `

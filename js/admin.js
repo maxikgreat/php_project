@@ -17,11 +17,35 @@ window.onload = () => {
                   <div class="card-body">
                     <h5 class="card-title">${quiz.name} (${quiz.question_amount} quest.)</h5>
                     <p class="card-text">${quiz.description}</p>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <div>
+                      <button data-id="${quiz.id}" class="btn btn-danger deleteHandler">Delete</button>
+                      <span>Created: ${new Date(parseInt(quiz.date)).toLocaleDateString()} | 
+                        ${new Date(parseInt(quiz.date)).toLocaleTimeString()}
+                      </span>
+                    </div>
                   </div>
                 </div>
               `
             })
+            const deleteHandlers = document.querySelectorAll('.deleteHandler');
+            [...deleteHandlers].forEach(handler => {
+              handler.addEventListener('click', () => {
+                fetch('./api/qdelete.php', {
+                  method: 'POST',
+                  body: JSON.stringify({id: handler.getAttribute('data-id')})
+                })
+                  .then(response => {
+                    response.json()
+                      .then(data => {
+                        if (data === "Success!") {
+                          location.reload();
+                        }
+                      })
+                      .catch(e => console.log(e))
+                  })
+              })
+            })
+            
           } else {
             listSection.innerHTML = 'List is empty'
           }
@@ -35,13 +59,7 @@ const checkAdmin = () => {
     .then(response => {
       if (!response.ok) {
         document.write('You need firstly log in to see this page');
-        const splitedUrl = document.location.href.split('/');
-        const lastParam = splitedUrl[splitedUrl.length - 1].split('.');
-        lastParam[0] = 'login';
-        const joindedParam = lastParam.join('.');
-        splitedUrl[splitedUrl.length - 1] = joindedParam;
-        const joinedUrl = splitedUrl.join('/');
-        document.location.href = joinedUrl;
+        document.location.href = document.location.href.replace('admin', 'login');
       }
     })
     .catch(e => {
